@@ -13,7 +13,7 @@ import java.util.UUID;
 @RestController
 public class CoursController {
 
-    private CoursService courseService;
+    private final CoursService courseService;
 
     public CoursController(CoursService courseService) {
         this.courseService = courseService;

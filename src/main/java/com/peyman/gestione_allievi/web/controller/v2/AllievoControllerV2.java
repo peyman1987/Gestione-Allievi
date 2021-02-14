@@ -1,7 +1,8 @@
-package com.peyman.gestione_allievi.web.controller;
+package com.peyman.gestione_allievi.web.controller.v2;
 
-import com.peyman.gestione_allievi.web.model.AllievoDto;
+import com.peyman.gestione_allievi.web.model.v2.AllievoDtoV2 ;
 import com.peyman.gestione_allievi.web.service.AllievoService;
+import com.peyman.gestione_allievi.web.service.v2.AllievoServiceV2;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,26 +10,25 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
-@Deprecated
-@RequestMapping("/api/v1/allievo")
+@RequestMapping("/api/v2/allievo")
 @RestController
-public class AllievoController {
+public class AllievoControllerV2 {
 
-    private final AllievoService allievoService;
+    private final AllievoServiceV2 allievoService;
 
-    public AllievoController(AllievoService allievoService) {
+    public AllievoControllerV2 (AllievoServiceV2  allievoService) {
         this.allievoService = allievoService;
     }
 
     @GetMapping({"/{allievoId}"})
-    public ResponseEntity<AllievoDto> getAllievo(@PathVariable("allievoId") UUID allievoId){
+    public ResponseEntity<AllievoDtoV2 > getAllievo(@PathVariable("allievoId") UUID allievoId){
 
         return new ResponseEntity<>(allievoService.getAllievoById(allievoId), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<AllievoDto> handlePost(@PathVariable AllievoDto allievoDto){
-        AllievoDto savedDto = allievoService.saveNewAllievo(allievoDto);
+    public ResponseEntity<AllievoDtoV2 > handlePost(@PathVariable AllievoDtoV2  allievoDto){
+        AllievoDtoV2  savedDto = allievoService.saveNewAllievo(allievoDto);
 
         HttpHeaders headers = new HttpHeaders();
         // http://localhost:8081/
@@ -38,7 +38,7 @@ public class AllievoController {
     }
 
     @PutMapping({"/{allievoId}"})
-    public ResponseEntity handleUpdate(@PathVariable("allievoId") UUID allievoId, AllievoDto allievoDto){
+    public ResponseEntity handleUpdate(@PathVariable("allievoId") UUID allievoId, AllievoDtoV2  allievoDto){
 
         allievoService.updateAllievo(allievoId, allievoDto);
 
