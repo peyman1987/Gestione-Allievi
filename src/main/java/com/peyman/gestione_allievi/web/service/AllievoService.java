@@ -6,4 +6,10 @@ import java.util.UUID;
 
 public interface AllievoService {
     AllievoDto getAllievoById(UUID allievoId);
+
+    AllievoDto saveNewAllievo(AllievoDto allievoDto);
+
+    void updateAllievo(UUID allievoId, AllievoDto allievoDto);
+
+    void deledById(UUID allievoId);
 }
