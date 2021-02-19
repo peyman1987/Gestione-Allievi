@@ -5,6 +5,7 @@ import com.peyman.gestione_allievi.web.service.AllievoService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class AllievoController {
     }
 
     @PostMapping
-    public ResponseEntity<AllievoDto> handlePost(@PathVariable AllievoDto allievoDto){
+    public ResponseEntity<AllievoDto> handlePost( @RequestBody @Validated AllievoDto allievoDto){
         AllievoDto savedDto = allievoService.saveNewAllievo(allievoDto);
 
         HttpHeaders headers = new HttpHeaders();
@@ -38,7 +39,7 @@ public class AllievoController {
     }
 
     @PutMapping({"/{allievoId}"})
-    public ResponseEntity handleUpdate(@PathVariable("allievoId") UUID allievoId, AllievoDto allievoDto){
+    public ResponseEntity handleUpdate(@PathVariable("allievoId") UUID allievoId, @RequestBody @Validated AllievoDto allievoDto){
 
         allievoService.updateAllievo(allievoId, allievoDto);
 
@@ -49,6 +50,5 @@ public class AllievoController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deletAllievo(@PathVariable("allievoId") UUID allievoId){
         allievoService.deledById(allievoId);
-
     }
 }

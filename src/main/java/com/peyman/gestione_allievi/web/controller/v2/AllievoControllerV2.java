@@ -1,15 +1,21 @@
 package com.peyman.gestione_allievi.web.controller.v2;
 
 import com.peyman.gestione_allievi.web.model.v2.AllievoDtoV2 ;
-import com.peyman.gestione_allievi.web.service.AllievoService;
 import com.peyman.gestione_allievi.web.service.v2.AllievoServiceV2;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
+@Validated
 @RequestMapping("/api/v2/allievo")
 @RestController
 public class AllievoControllerV2 {
@@ -21,13 +27,13 @@ public class AllievoControllerV2 {
     }
 
     @GetMapping({"/{allievoId}"})
-    public ResponseEntity<AllievoDtoV2 > getAllievo(@PathVariable("allievoId") UUID allievoId){
+    public ResponseEntity<AllievoDtoV2 > getAllievo(@NotNull @PathVariable("allievoId") UUID allievoId){
 
         return new ResponseEntity<>(allievoService.getAllievoById(allievoId), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<AllievoDtoV2 > handlePost(@PathVariable AllievoDtoV2  allievoDto){
+    public ResponseEntity<AllievoDtoV2 > handlePost(@Valid @NotNull @RequestBody  AllievoDtoV2  allievoDto){
         AllievoDtoV2  savedDto = allievoService.saveNewAllievo(allievoDto);
 
         HttpHeaders headers = new HttpHeaders();
@@ -38,7 +44,7 @@ public class AllievoControllerV2 {
     }
 
     @PutMapping({"/{allievoId}"})
-    public ResponseEntity handleUpdate(@PathVariable("allievoId") UUID allievoId, AllievoDtoV2  allievoDto){
+    public ResponseEntity handleUpdate(@NotNull@PathVariable("allievoId") UUID allievoId, @Valid @RequestBody AllievoDtoV2  allievoDto){
 
         allievoService.updateAllievo(allievoId, allievoDto);
 
@@ -51,4 +57,6 @@ public class AllievoControllerV2 {
         allievoService.deledById(allievoId);
 
     }
+
+
 }

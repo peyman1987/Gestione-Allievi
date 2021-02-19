@@ -1,0 +1,16 @@
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\GestioneAllieviApplication.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\AllievoServiceImpl.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\model\v2\AllievoDtoV2.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\controller\IndexController.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\CoursServiceImpl.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\controller\CoursController.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\model\AllievoDto.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\controller\v2\AllievoControllerV2.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\model\CoursDto.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\v2\AllievoServiceV2Impl.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\AllievoService.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\CoursService.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\model\v2\CoursDtoV2.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\service\v2\AllievoServiceV2.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\controller\AllievoController.java
+C:\_spring\gestione_allievi\src\main\java\com\peyman\gestione_allievi\web\model\v2\LevelEnum.java
