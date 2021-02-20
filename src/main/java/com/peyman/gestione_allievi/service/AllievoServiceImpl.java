@@ -1,4 +1,4 @@
-package com.peyman.gestione_allievi.web.service;
+package com.peyman.gestione_allievi.service;
 
 import com.peyman.gestione_allievi.web.model.AllievoDto;
 import lombok.extern.slf4j.Slf4j;

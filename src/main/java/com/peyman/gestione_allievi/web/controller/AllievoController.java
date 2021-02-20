@@ -1,7 +1,7 @@
 package com.peyman.gestione_allievi.web.controller;
 
 import com.peyman.gestione_allievi.web.model.AllievoDto;
-import com.peyman.gestione_allievi.web.service.AllievoService;
+import com.peyman.gestione_allievi.service.AllievoService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

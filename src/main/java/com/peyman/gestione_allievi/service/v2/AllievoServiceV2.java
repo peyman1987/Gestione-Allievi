@@ -1,4 +1,4 @@
-package com.peyman.gestione_allievi.web.service.v2;
+package com.peyman.gestione_allievi.service.v2;
 
 import com.peyman.gestione_allievi.web.model.v2.AllievoDtoV2;
 

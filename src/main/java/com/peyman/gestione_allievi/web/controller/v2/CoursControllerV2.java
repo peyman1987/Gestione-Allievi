@@ -1,25 +1,22 @@
 package com.peyman.gestione_allievi.web.controller.v2;
 
 import com.peyman.gestione_allievi.web.model.CoursDto;
-import com.peyman.gestione_allievi.web.service.CoursService;
+import com.peyman.gestione_allievi.service.CoursService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @RequestMapping("/api/v2/cours")
 @RestController
-public class CoursController {
+public class CoursControllerV2 {
 
     private final CoursService courseService;
 
-    public CoursController(CoursService courseService) {
+    public CoursControllerV2(CoursService courseService) {
         this.courseService = courseService;
     }
 

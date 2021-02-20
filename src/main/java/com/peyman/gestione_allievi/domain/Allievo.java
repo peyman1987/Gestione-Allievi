@@ -1,24 +1,24 @@
-package com.peyman.gestione_allievi.web.model.v2;
+package com.peyman.gestione_allievi.domain;
 
-
+import com.peyman.gestione_allievi.web.model.v2.LevelEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.OffsetDateTime;
+import java.sql.Timestamp;
 import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AllievoDtoV2 {
+public class Allievo {
 
     private UUID id;
     private Integer version;
-    private OffsetDateTime createdDate;
-    private OffsetDateTime lastModifatedDate;
+    private Timestamp createdDate;
+    private Timestamp lastModifatedDate;
     private String firstName;
     private String lastName;
     private String email;
